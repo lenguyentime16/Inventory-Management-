@@ -1,0 +1,358 @@
+.productsPage {
+    padding: 24px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    margin: 0;
+    color: var(--pakistan-green);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.filters {
+    margin-bottom: 24px;
+    padding: 20px;
+    background: var(--seasalt);
+    border-radius: 12px;
+    border: 1px solid var(--beige);
+}
+
+.searchForm {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.searchForm>div {
+    flex: 1;
+    max-width: 400px;
+}
+
+.searchForm button {
+    min-height: 42px;
+    align-self: flex-end;
+    white-space: nowrap;
+}
+
+.loading,
+.error {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.loading {
+    background: var(--beige);
+    color: var(--pakistan-green);
+}
+
+.error {
+    background: #fee;
+    color: #c33;
+    border: 1px solid #fcc;
+}
+
+/* Table Layout */
+.tableContainer {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.productTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.productTable th {
+    background: var(--pakistan-green);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.productTable td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--beige);
+    vertical-align: middle;
+}
+
+.productTable tbody tr:hover {
+    background: var(--seasalt);
+}
+
+.productTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.productName {
+    font-weight: 500;
+    color: var(--pakistan-green);
+    min-width: 150px;
+}
+
+.price {
+    font-weight: 600;
+    color: #059669;
+    text-align: right;
+    min-width: 120px;
+}
+
+.quantity {
+    text-align: center;
+    font-weight: 500;
+    min-width: 80px;
+}
+
+.category {
+    color: var(--pakistan-green);
+    background: var(--beige);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 100px;
+    text-align: center;
+}
+
+.description {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #666;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    min-width: 120px;
+}
+
+.noData {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 40px 16px;
+}
+
+/* Hide old card layout */
+.productGrid {
+    display: none;
+}
+
+.productCard {
+    background: white;
+    border: 1px solid var(--sage);
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.2s ease;
+}
+
+.productCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(20, 49, 9, 0.1);
+}
+
+.productCard h3 {
+    margin: 0 0 12px 0;
+    color: var(--pakistan-green);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--pakistan-green);
+    margin: 8px 0;
+}
+
+.stock {
+    color: var(--sage);
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+.description {
+    color: #666;
+    margin: 12px 0;
+    line-height: 1.5;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--beige);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    min-width: 400px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modalContent h2 {
+    margin: 0 0 20px 0;
+    color: var(--pakistan-green);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.modalContent form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.formGroup label {
+    font-weight: 500;
+    color: var(--pakistan-green);
+    font-size: 0.875rem;
+}
+
+.select {
+    padding: 8px 12px;
+    border: 1px solid var(--sage);
+    border-radius: 4px;
+    font-size: 1rem;
+    background: white;
+    color: var(--pakistan-green);
+    transition: border-color 0.2s ease-in-out;
+}
+
+.select:focus {
+    outline: none;
+    border-color: var(--pakistan-green);
+    box-shadow: 0 0 0 2px rgba(20, 49, 9, 0.1);
+}
+
+.modalActions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--beige);
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .searchForm {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .searchForm>div {
+        max-width: none;
+    }
+
+    .searchForm button {
+        align-self: stretch;
+    }
+
+    .tableContainer {
+        margin: 0 -24px;
+        border-radius: 0;
+    }
+
+    .productTable {
+        font-size: 0.75rem;
+    }
+
+    .productTable th,
+    .productTable td {
+        padding: 8px 12px;
+    }
+
+    .description {
+        max-width: 150px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .modalContent {
+        min-width: 320px;
+        margin: 20px;
+    }
+
+    .modalActions {
+        flex-direction: column;
+    }
+}
+
+/* Error styling */
+.errorMessage {
+    background: #fee;
+    color: #c53030;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #fed7d7;
+    margin-bottom: 16px;
+    font-size: 0.875rem;
+}
+
+.errorText {
+    color: #c53030;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    display: block;
+}
+
+.select.error {
+    border-color: #c53030;
+    box-shadow: 0 0 0 1px #c53030;
+}
+
+.formGroup {
+    margin-bottom: 16px;
+}

@@ -1,0 +1,266 @@
+.categoriesPage {
+    padding: 24px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    margin: 0;
+    color: var(--pakistan-green);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.filters {
+    margin-bottom: 24px;
+    padding: 20px;
+    background: var(--seasalt);
+    border-radius: 12px;
+    border: 1px solid var(--beige);
+}
+
+.searchForm {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.searchForm>div {
+    flex: 1;
+    max-width: 400px;
+}
+
+.searchForm button {
+    min-height: 42px;
+    align-self: flex-end;
+    white-space: nowrap;
+}
+
+.loading,
+.error {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.loading {
+    background: var(--beige);
+    color: var(--pakistan-green);
+}
+
+.error {
+    background: #fee;
+    color: #c33;
+    border: 1px solid #fcc;
+}
+
+/* Table Layout */
+.tableContainer {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.categoryTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.categoryTable th {
+    background: var(--pakistan-green);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.categoryTable td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--beige);
+    vertical-align: middle;
+}
+
+.categoryTable tbody tr:hover {
+    background: var(--seasalt);
+}
+
+.categoryTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.categoryName {
+    font-weight: 500;
+    color: var(--pakistan-green);
+    min-width: 200px;
+}
+
+.description {
+    color: #666;
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    min-width: 120px;
+}
+
+.noData {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 40px 16px;
+}
+
+/* Hide old card layout */
+.categoryGrid {
+    display: none;
+}
+
+.categoryCard {
+    background: white;
+    border: 1px solid var(--sage);
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.2s ease;
+}
+
+.categoryCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(20, 49, 9, 0.1);
+}
+
+.categoryCard h3 {
+    margin: 0 0 12px 0;
+    color: var(--pakistan-green);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.description {
+    color: #666;
+    margin: 12px 0;
+    line-height: 1.5;
+    min-height: 40px;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--beige);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    min-width: 400px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modalContent h2 {
+    margin: 0 0 20px 0;
+    color: var(--pakistan-green);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.modalContent form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modalActions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--beige);
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .searchForm {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .searchForm>div {
+        max-width: none;
+    }
+
+    .searchForm button {
+        align-self: stretch;
+    }
+
+    .tableContainer {
+        margin: 0 -24px;
+        border-radius: 0;
+    }
+
+    .categoryTable {
+        font-size: 0.75rem;
+    }
+
+    .categoryTable th,
+    .categoryTable td {
+        padding: 8px 12px;
+    }
+
+    .description {
+        max-width: 150px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .modalContent {
+        min-width: 320px;
+        margin: 20px;
+    }
+
+    .modalActions {
+        flex-direction: column;
+    }
+}
